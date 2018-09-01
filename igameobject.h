@@ -1,26 +1,43 @@
 #ifndef IGAMEOBJECT_H
 #define IGAMEOBJECT_H
-#include "world.h"
+#include "iworld.h"
 #include "renderer.h"
 
 class IGameObject
 {
 public:
     virtual ~IGameObject() {}
-    virtual void update(World& world) = 0;
+    virtual void update(IWorld& world) = 0;
     virtual void render(Renderer& renderer) = 0;
 
-    int getDx() const;
-    void setDx(int dx);
+    int getDx() const{
+        return m_dx;
+        }
+    void setDx(int dx){
+        m_dx = dx;
+        }
 
-    int getDy() const;
-    void setDy(int dy);
+    int getDy() const{
+        return m_dy;
+        }
 
-    int getX() const;
-    void setX(int x);
+    void setDy(int dy){
+        m_dy = dy;
+        }
 
-    int getY() const;
-    void setY(int y);
+    int getX() const{
+        return m_x;
+        }
+    void setX(int x){
+        m_x = x;
+        }
+
+    int getY() const{
+        return m_y;
+        }
+    void setY(int y){
+        m_y = y;
+        }
 
 private:
     int m_dx = 0;
@@ -28,44 +45,4 @@ private:
     int m_x = 0;
     int m_y = 0;
 };
-
-int IGameObject::getDx() const
-{
-return m_dx;
-}
-
-void IGameObject::setDx(int dx)
-{
-m_dx = dx;
-}
-
-int IGameObject::getDy() const
-{
-return m_dy;
-}
-
-void IGameObject::setDy(int dy)
-{
-m_dy = dy;
-}
-
-int IGameObject::getX() const
-{
-return m_x;
-}
-
-void IGameObject::setX(int x)
-{
-m_x = x;
-}
-
-int IGameObject::getY() const
-{
-return m_y;
-}
-
-void IGameObject::setY(int y)
-{
-m_y = y;
-}
 #endif // IGAMEOBJECT_H

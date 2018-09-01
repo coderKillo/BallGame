@@ -12,9 +12,9 @@ public:
                               PhysicsComponent* physics,
                               GraphicsComponent* graphics);
     virtual ~GameObject() {}
-    virtual void update(World& world) override;
+    virtual void update(IWorld& world) override;
     virtual void render(Renderer& renderer) override;
-private:
+protected:
     PhysicsComponent* m_physics = nullptr;
     GraphicsComponent* m_graphics = nullptr;
     InputComponent* m_input = nullptr;

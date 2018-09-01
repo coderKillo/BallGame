@@ -8,7 +8,7 @@ GameObject::GameObject(InputComponent *input, PhysicsComponent *physics, Graphic
 
 }
 
-void GameObject::update(World &world)
+void GameObject::update(IWorld &world)
 {
     m_input->update(*this);
     m_physics->update(*this, world);

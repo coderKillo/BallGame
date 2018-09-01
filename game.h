@@ -1,20 +1,24 @@
 #ifndef GAME_H
 #define GAME_H
+#include <QMainWindow>
 #include "renderer.h"
 #include "world.h"
+#include "QTimer"
 
-class Game
+class Game: public QObject
 {
+    Q_OBJECT
 public:
     Game();
     bool isRunning();
+
+public slots:
     void updateGame();
-    void setIntpolateFraction(float factor);
-    void renderGameObjects();
-    void renderGUI();
+
 private:
     bool m_isRunning;
     Renderer* m_renderer = nullptr;
     World* m_world = nullptr;
+    QTimer* m_timer = nullptr;
 };
 #endif // GAME_H

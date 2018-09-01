@@ -1,10 +1,16 @@
 #include "game.h"
+#include "ui_mainwindow.h"
+#include <iostream>
 
 Game::Game()
     :m_isRunning(true)
+    ,m_renderer(new Renderer)
+    ,m_world(new World)
+    ,m_timer(new QTimer)
 {
-    m_renderer = new Renderer();
-    m_world = new World();
+    //start Timer
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGame()));
+    m_timer->start(16);
 }
 
 bool Game::isRunning()
@@ -13,21 +19,6 @@ bool Game::isRunning()
 }
 
 void Game::updateGame()
-{
-
-}
-
-void Game::setIntpolateFraction(float factor)
-{
-
-}
-
-void Game::renderGameObjects()
-{
-
-}
-
-void Game::renderGUI()
 {
 
 }

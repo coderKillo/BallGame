@@ -1,37 +1,33 @@
 #include <QApplication>
 #include <QGraphicsItem>
 #include <QTime>
+#include <iostream>
 
 #include "renderer.h"
 #include "game.h"
 
+class MyApplication: public QApplication
+{
+    // QCoreApplication interface
+public:
+    MyApplication(int &argc, char **argv, int a = ApplicationFlags)
+        :QApplication(argc,argv,a)
+    {}
+    bool notify(QObject *object, QEvent *event)
+    {
+        std::cout << object << "\t : \t" << event->type() << std::endl;
+        return QApplication::notify(object, event);
+    }
+};
+
 int main(int argc, char *argv[])
 {
-        QApplication a(argc, argv);
-        Game game{};
+        // INIT OBJECTS
+        MyApplication a(argc, argv);
+        Game game;
 
-        int updateSteps = 16; //60 FPS
-        int previousTime = QTime::currentTime().msec();
-        int lag = 0;
+        //CONNECT
 
-       while(game.isRunning())
-       {
-            int currentTime = QTime::currentTime().msec();
-            int elapsedTime = currentTime - previousTime;
-            previousTime = currentTime;
-            lag += elapsedTime;
-
-            //handle User Input
-
-            if(lag >= updateSteps)
-            {
-                game.updateGame();
-                lag -= updateSteps;
-            }
-            game.setIntpolateFraction(static_cast<float>(lag)/static_cast<float>(updateSteps));
-            game.renderGameObjects();
-            game.renderGUI();
-       }
-       a.exit();
-       return 0;
+        //EXEC
+        return a.exec();
 }

@@ -2,10 +2,10 @@
 #define DEFAULTPHYSICSCOMPONENT_H
 #include "physiccomponent.h"
 
-class DefaultPhysicsComponent: public PhysicsComponent
+class BallPhysicsComponent: public PhysicsComponent
 {
 public:
-    virtual void update(IGameObject& object, World& world) override;
+    virtual void update(IGameObject& object, IWorld& world) override;
 };
 
 #endif // DEFAULTPHYSICSCOMPONENT_H

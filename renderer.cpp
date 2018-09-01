@@ -10,8 +10,3 @@ Renderer::Renderer()
     m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_view->show();
 }
-
-void Renderer::setIntpolateFraction(float factor)
-{
-    m_intpolateFraction = factor;
-}

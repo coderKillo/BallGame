@@ -5,7 +5,7 @@
 class InputComponent
 {
 public:
-    virtual ~InputComponent();
+    virtual ~InputComponent() {}
     virtual void update(IGameObject& object) = 0;
 };
 
