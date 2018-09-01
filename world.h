@@ -10,6 +10,7 @@ class World: public IWorld
 public:
     World();
     void updateGameObjects();
+    std::vector<IGameObject*> getVisableObjects();
 
 private:
     std::vector<IGameObject*> m_objects;

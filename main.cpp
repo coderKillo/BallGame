@@ -15,7 +15,7 @@ public:
     {}
     bool notify(QObject *object, QEvent *event)
     {
-        std::cout << object << "\t : \t" << event->type() << std::endl;
+        //std::cout << object << "\t : \t" << event->type() << std::endl;
         return QApplication::notify(object, event);
     }
 };

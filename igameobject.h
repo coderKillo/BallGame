@@ -39,10 +39,19 @@ public:
         m_y = y;
         }
 
-private:
+    bool getVisability() const{
+        return m_isVisable;
+    }
+
+    void setVisability(bool v){
+        m_isVisable = v;
+    }
+
+protected:
     int m_dx = 0;
     int m_dy = 0;
     int m_x = 0;
     int m_y = 0;
+    bool m_isVisable = true;
 };
 #endif // IGAMEOBJECT_H

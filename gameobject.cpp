@@ -1,4 +1,5 @@
 #include "gameobject.h"
+#include <iostream>
 
 GameObject::GameObject(InputComponent *input, PhysicsComponent *physics, GraphicsComponent *graphics)
     :m_physics(physics)

@@ -51,3 +51,9 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES += \
+    Ball.png
+
+RESOURCES += \
+    texture.qrc

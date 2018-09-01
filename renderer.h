@@ -14,5 +14,4 @@ private:
     static const int WIDTH = 800;
     static const int HEIGHT = 600;
 };
-
 #endif // RENDERER_H

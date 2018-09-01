@@ -10,7 +10,7 @@ public:
     BallGraphicsComponent();
     virtual void update(IGameObject& object, Renderer& renderer) override;
 private:
-    std::unique_ptr<QGraphicsPixmapItem> m_graphicItem;
+    QPixmap m_pixmap;
 };
 
 #endif // BALLGRAPHICSCOMPONENT_H

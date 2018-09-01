@@ -20,5 +20,12 @@ bool Game::isRunning()
 
 void Game::updateGame()
 {
+    std::cout << "updateGame" << std::endl;
+    m_world->updateGameObjects();
+    auto visableObj = m_world->getVisableObjects();
 
+    for(auto &obj : visableObj)
+    {
+        obj->render(*m_renderer);
+    }
 }
