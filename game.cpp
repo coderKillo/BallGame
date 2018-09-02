@@ -27,7 +27,8 @@ void Game::updateGame()
 
     for(auto &obj : visableObj)
     {
-        obj->render(*m_renderer);
+        m_renderer->addItem(obj);
+        obj->setIsDirty(false);
     }
 }
 

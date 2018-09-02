@@ -8,5 +8,5 @@ Ball::Ball()
                                new BallPhysicsComponent,
                                new BallGraphicsComponent)
 {
-
+    this->setPos(100,100);
 }

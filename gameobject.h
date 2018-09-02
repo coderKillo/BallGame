@@ -15,11 +15,14 @@ public:
     virtual void update(IWorld& world) override;
     virtual void render(Renderer& renderer) override;
 protected:
-    void updatePos();
-
     PhysicsComponent* m_physics = nullptr;
     GraphicsComponent* m_graphics = nullptr;
     InputComponent* m_input = nullptr;
+
+    // QGraphicsItem interface
+public:
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // GAMEOBJECT_H

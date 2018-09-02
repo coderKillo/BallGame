@@ -1,4 +1,5 @@
 #include "ballphysicscomponent.h"
+#include <iostream>
 
 void BallPhysicsComponent::update(IGameObject &object, IWorld &world)
 {
@@ -6,10 +7,8 @@ void BallPhysicsComponent::update(IGameObject &object, IWorld &world)
     object.setDy(object.getDy() + G_FORCE * TIMESTEP);
 
     //apply movement
-    object.setX(object.getX() + object.getDx() * TIMESTEP);
-    object.setY(object.getY() + object.getDy() * TIMESTEP);
+    object.setX(object.x() + object.getDx() * TIMESTEP);
+    object.setY(object.y() + object.getDy() * TIMESTEP);
 
-    // do Collision
-
-    auto list =
+    // TODO: Collision
 }

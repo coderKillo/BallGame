@@ -19,11 +19,7 @@ void World::updateGameObjects()
 
 bool World::checkBorderCollision(QGraphicsPixmapItem *object)
 {
-    auto& rect = m_border->boundingRect();
-
-    //intersection
-    rect.
-
+    return false;
 }
 
 std::vector<IGameObject *> World::getDirtyObjects()
