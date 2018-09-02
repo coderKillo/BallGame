@@ -11,6 +11,8 @@ Game::Game()
     //start Timer
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGame()));
     m_timer->start(16);
+
+    drawBorder();
 }
 
 bool Game::isRunning()
@@ -20,12 +22,22 @@ bool Game::isRunning()
 
 void Game::updateGame()
 {
-    std::cout << "updateGame" << std::endl;
     m_world->updateGameObjects();
-    auto visableObj = m_world->getVisableObjects();
+    auto visableObj = m_world->getDirtyObjects();
 
     for(auto &obj : visableObj)
     {
         obj->render(*m_renderer);
     }
+}
+
+void Game::drawBorder()
+{
+    auto border = m_renderer->addRect(
+                m_renderer->sceneRect()
+                ,QPen(QBrush(Qt::black),20)
+                ,QBrush(Qt::transparent)
+                );
+
+    m_world->setBorder(border);
 }

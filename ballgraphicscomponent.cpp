@@ -9,5 +9,9 @@ BallGraphicsComponent::BallGraphicsComponent()
 
 void BallGraphicsComponent::update(IGameObject &object, Renderer &renderer)
 {
-    renderer.addItem(this);
+    if(!m_isDrawn)
+    {
+        renderer.addItem(this);
+        m_isDrawn = true;
+    }
 }

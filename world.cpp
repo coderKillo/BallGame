@@ -17,18 +17,32 @@ void World::updateGameObjects()
     }
 }
 
-std::vector<IGameObject *> World::getVisableObjects()
+bool World::checkBorderCollision(QGraphicsPixmapItem *object)
+{
+    auto& rect = m_border->boundingRect();
+
+    //intersection
+    rect.
+
+}
+
+std::vector<IGameObject *> World::getDirtyObjects()
 {
     std::vector<IGameObject*> vec{};
 
     for(const auto &object : m_objects)
     {
-        if(object->getVisability())
+        if(object->getIsDirty())
         {
             vec.push_back(object);
         }
     }
 
     return std::move(vec);
+}
+
+void World::setBorder(QGraphicsRectItem *border)
+{
+    m_border = border;
 }
 

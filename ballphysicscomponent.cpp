@@ -2,7 +2,14 @@
 
 void BallPhysicsComponent::update(IGameObject &object, IWorld &world)
 {
-    // TODO: make Gravity
+    //apply gForce
+    object.setDy(object.getDy() + G_FORCE * TIMESTEP);
 
-    //TODO: make Collision
+    //apply movement
+    object.setX(object.getX() + object.getDx() * TIMESTEP);
+    object.setY(object.getY() + object.getDy() * TIMESTEP);
+
+    // do Collision
+
+    auto list =
 }

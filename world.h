@@ -10,10 +10,15 @@ class World: public IWorld
 public:
     World();
     void updateGameObjects();
-    std::vector<IGameObject*> getVisableObjects();
+
+    bool checkBorderCollision(QGraphicsPixmapItem* object);
+
+    std::vector<IGameObject*> getDirtyObjects();
+    void setBorder(QGraphicsRectItem* border);
 
 private:
     std::vector<IGameObject*> m_objects;
+    QGraphicsRectItem* m_border = nullptr;
 };
 
 #endif // WORLD_H

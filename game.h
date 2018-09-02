@@ -16,6 +16,8 @@ public slots:
     void updateGame();
 
 private:
+    void drawBorder();
+
     bool m_isRunning;
     Renderer* m_renderer = nullptr;
     World* m_world = nullptr;

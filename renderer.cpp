@@ -11,11 +11,4 @@ Renderer::Renderer()
     m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_view->show();
     m_view->setScene(this);
-
-    //  TODO: Make Draws Boundries better
-    this->addRect(
-                this->sceneRect()
-                ,QPen(QBrush(Qt::black),20)
-                ,QBrush(Qt::transparent)
-                );
 }

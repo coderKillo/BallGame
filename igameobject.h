@@ -10,48 +10,48 @@ public:
     virtual void update(IWorld& world) = 0;
     virtual void render(Renderer& renderer) = 0;
 
-    int getDx() const{
+    qreal getDx() const{
         return m_dx;
         }
-    void setDx(int dx){
+    void setDx(qreal dx){
         m_dx = dx;
         }
 
-    int getDy() const{
+    qreal getDy() const{
         return m_dy;
         }
 
-    void setDy(int dy){
+    void setDy(qreal dy){
         m_dy = dy;
         }
 
-    int getX() const{
+    qreal getX() const{
         return m_x;
         }
-    void setX(int x){
+    void setX(qreal x){
         m_x = x;
         }
 
-    int getY() const{
+    qreal getY() const{
         return m_y;
         }
-    void setY(int y){
+    void setY(qreal y){
         m_y = y;
         }
 
-    bool getVisability() const{
-        return m_isVisable;
+    bool getIsDirty() const{
+        return m_isDirty;
     }
 
-    void setVisability(bool v){
-        m_isVisable = v;
+    void setIsDirty(bool v){
+        m_isDirty = v;
     }
 
 protected:
-    int m_dx = 0;
-    int m_dy = 0;
-    int m_x = 0;
-    int m_y = 0;
-    bool m_isVisable = true;
+    qreal m_dx = 0;
+    qreal m_dy = 0;
+    qreal m_x = 0;
+    qreal m_y = 0;
+    bool m_isDirty = true;
 };
 #endif // IGAMEOBJECT_H

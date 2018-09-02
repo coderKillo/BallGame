@@ -15,6 +15,8 @@ public:
     virtual void update(IWorld& world) override;
     virtual void render(Renderer& renderer) override;
 protected:
+    void updatePos();
+
     PhysicsComponent* m_physics = nullptr;
     GraphicsComponent* m_graphics = nullptr;
     InputComponent* m_input = nullptr;
