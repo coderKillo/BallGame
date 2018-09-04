@@ -47,7 +47,8 @@ HEADERS += \
     nullinputcomponent.h \
     ball.h \
     ballphysicscomponent.h \
-    iworld.h
+    iworld.h \
+    igameobjectstate.h
 
 FORMS += \
         mainwindow.ui
