@@ -9,6 +9,14 @@ GameObject::GameObject(InputComponent *input, PhysicsComponent *physics, Graphic
 
 }
 
+GameObject::~GameObject()
+{
+    delete m_input;
+    delete m_physics;
+    delete m_graphics;
+    delete currentState;
+}
+
 void GameObject::update(IWorld &world)
 {
     m_input->update(*this);

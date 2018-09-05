@@ -12,3 +12,8 @@ Renderer::Renderer()
     m_view->show();
     m_view->setScene(this);
 }
+
+Renderer::~Renderer()
+{
+    delete m_view;
+}

@@ -10,6 +10,7 @@ class Game: public QObject
     Q_OBJECT
 public:
     Game();
+    ~Game();
     bool isRunning();
 
 public slots:

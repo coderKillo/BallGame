@@ -11,7 +11,7 @@ public:
     GameObject(InputComponent* input,
                               PhysicsComponent* physics,
                               GraphicsComponent* graphics);
-    virtual ~GameObject() {}
+    ~GameObject();
     virtual void update(IWorld& world) override;
     virtual void render(Renderer& renderer) override;
 protected:

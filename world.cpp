@@ -9,6 +9,12 @@ World::World()
     m_objects.push_back(new Ball);
 }
 
+World::~World()
+{
+
+    delete m_border;
+}
+
 void World::updateGameObjects()
 {
     for(const auto &object : m_objects)
@@ -17,9 +23,25 @@ void World::updateGameObjects()
     }
 }
 
-bool World::checkBorderCollision(QGraphicsPixmapItem *object)
+QGraphicsItem* World::collideWithBorder(QGraphicsItem *object)
 {
-    return false;
+    if(object->collidesWithItem(m_border->top))
+    {
+        return m_border->top;
+    }
+    if(object->collidesWithItem(m_border->bottom))
+    {
+        return m_border->bottom;
+    }
+    if(object->collidesWithItem(m_border->right))
+    {
+        return m_border->right;
+    }
+    if(object->collidesWithItem(m_border->left))
+    {
+        return m_border->left;
+    }
+    return nullptr;
 }
 
 std::vector<IGameObject *> World::getDirtyObjects()
@@ -37,7 +59,7 @@ std::vector<IGameObject *> World::getDirtyObjects()
     return std::move(vec);
 }
 
-void World::setBorder(QGraphicsRectItem *border)
+void World::setBorder(Border *border)
 {
     m_border = border;
 }

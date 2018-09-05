@@ -15,6 +15,13 @@ Game::Game()
     drawBorder();
 }
 
+Game::~Game()
+{
+    delete m_renderer;
+    delete m_world;
+    delete m_timer;
+}
+
 bool Game::isRunning()
 {
     return m_isRunning;
@@ -35,11 +42,12 @@ void Game::updateGame()
 void Game::drawBorder()
 {
     //TODO: make border 4 lines instat of rect
-    auto border = m_renderer->addRect(
-                m_renderer->sceneRect()
-                ,QPen(QBrush(Qt::black),20)
-                ,QBrush(Qt::transparent)
-                );
+    auto border = new Border(m_renderer->sceneRect(), 10);
+
+    m_renderer->addItem(border->top);
+    m_renderer->addItem(border->bottom);
+    m_renderer->addItem(border->right);
+    m_renderer->addItem(border->left);
 
     m_world->setBorder(border);
 }

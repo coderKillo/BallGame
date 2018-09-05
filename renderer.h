@@ -7,6 +7,7 @@ class Renderer: public QGraphicsScene
 {
 public:
     Renderer();
+    ~Renderer();
 
 private:
     QGraphicsView* m_view = nullptr;
