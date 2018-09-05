@@ -1,6 +1,6 @@
 #ifndef NULLINPUTCOMPONENT_H
 #define NULLINPUTCOMPONENT_H
-#include "inputcomponent.h"
+#include "../inputcomponent.h"
 
 class NullInputComponent: public InputComponent
 {

@@ -34,6 +34,7 @@ void Game::updateGame()
 
 void Game::drawBorder()
 {
+    //TODO: make border 4 lines instat of rect
     auto border = m_renderer->addRect(
                 m_renderer->sceneRect()
                 ,QPen(QBrush(Qt::black),20)

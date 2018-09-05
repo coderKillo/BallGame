@@ -1,9 +1,9 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include "igameobject.h"
-#include "graphicscomponent.h"
-#include "inputcomponent.h"
-#include "physiccomponent.h"
+#include "component/graphicscomponent.h"
+#include "component/inputcomponent.h"
+#include "component/physiccomponent.h"
 
 class GameObject: public IGameObject
 {

@@ -1,7 +1,7 @@
 #include "ball.h"
-#include "ballgraphicscomponent.h"
-#include "ballphysicscomponent.h"
-#include "nullinputcomponent.h"
+#include "../component/graphicscomponent/ballgraphicscomponent.h"
+#include "../component/physicscomponent/ballphysicscomponent.h"
+#include "../component/inputcomponent/nullinputcomponent.h"
 
 Ball::Ball()
     :GameObject(new NullInputComponent,

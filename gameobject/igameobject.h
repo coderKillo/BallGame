@@ -2,7 +2,9 @@
 #define IGAMEOBJECT_H
 
 #include <QGraphicsItem>
+#include <memory>
 #include "iworld.h"
+#include "igameobjectstate.h"
 #include "renderer.h"
 
 class IGameObject: public QGraphicsItem
@@ -11,6 +13,19 @@ public:
     virtual ~IGameObject() {}
     virtual void update(IWorld& world) = 0;
     virtual void render(Renderer& renderer) = 0;
+
+    IGameObjectState* getState() const
+    {
+        return currentState;
+    }
+
+    void setState(IGameObjectState* state)
+    {
+        if(state != nullptr)
+        {
+            currentState = state;
+        }
+    }
 
     qreal getDx() const{
         return m_dx;
@@ -36,6 +51,7 @@ public:
     }
 
 protected:
+    IGameObjectState* currentState = nullptr;
     qreal m_dx = 0;
     qreal m_dy = 0;
     bool m_isDirty = true;

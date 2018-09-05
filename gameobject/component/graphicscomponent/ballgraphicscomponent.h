@@ -1,6 +1,6 @@
 #ifndef BALLGRAPHICSCOMPONENT_H
 #define BALLGRAPHICSCOMPONENT_H
-#include "graphicscomponent.h"
+#include "../graphicscomponent.h"
 #include <memory>
 
 class BallGraphicsComponent: public GraphicsComponent

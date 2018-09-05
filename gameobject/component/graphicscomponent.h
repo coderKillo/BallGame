@@ -3,7 +3,7 @@
 
 #include <QGraphicsPixmapItem>
 #include "renderer.h"
-#include "igameobject.h"
+#include "../igameobject.h"
 
 class GraphicsComponent
 {

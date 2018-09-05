@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-CONFIG += c++11
+CONFIG += c++14
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,32 +29,33 @@ SOURCES += \
     renderer.cpp \
     game.cpp \
     world.cpp \
-    gameobject.cpp \
-    ballgraphicscomponent.cpp \
-    ball.cpp \
-    ballphysicscomponent.cpp
+    gameobject/object/ball.cpp \
+    gameobject/gameobject.cpp \
+    gameobject/component/graphicscomponent/ballgraphicscomponent.cpp \
+    gameobject/component/physicscomponent/ballphysicscomponent.cpp
 
 HEADERS += \
     renderer.h \
     game.h \
     world.h \
-    igameobject.h \
-    gameobject.h \
-    physiccomponent.h \
-    graphicscomponent.h \
-    inputcomponent.h \
-    ballgraphicscomponent.h \
-    nullinputcomponent.h \
-    ball.h \
-    ballphysicscomponent.h \
     iworld.h \
-    igameobjectstate.h
+    gameobject/gameobject.h \
+    gameobject/component/graphicscomponent.h \
+    gameobject/component/inputcomponent.h \
+    gameobject/component/physiccomponent.h \
+    gameobject/object/ball.h \
+    gameobject/igameobject.h \
+    gameobject/igameobjectstate.h \
+    gameobject/component/graphicscomponent/ballgraphicscomponent.h \
+    gameobject/component/inputcomponent/nullinputcomponent.h \
+    gameobject/component/physicscomponent/ballphysicscomponent.h
 
 FORMS += \
         mainwindow.ui
 
 DISTFILES += \
-    Ball.png
+    Ball.png \
+    .gitignore
 
 RESOURCES += \
     texture.qrc

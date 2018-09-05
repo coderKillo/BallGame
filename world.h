@@ -2,7 +2,7 @@
 #define WORLD_H
 #include <vector>
 #include <memory>
-#include "igameobject.h"
+#include "gameobject/igameobject.h"
 #include "iworld.h"
 
 class World: public IWorld

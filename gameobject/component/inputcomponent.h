@@ -1,6 +1,6 @@
 #ifndef INPUTCOMPONENT_H
 #define INPUTCOMPONENT_H
-#include "igameobject.h"
+#include "../igameobject.h"
 
 class InputComponent
 {
