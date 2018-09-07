@@ -1,9 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 #include <QMainWindow>
-#include "renderer.h"
 #include "world.h"
 #include "QTimer"
+
+//TODO: move include to cpp and forward decl class.
+class Renderer;
 
 class Game: public QObject
 {
@@ -11,15 +13,15 @@ class Game: public QObject
 public:
     Game();
     ~Game();
-    bool isRunning();
+    bool isRunning() const;
 
-public slots:
-    void updateGame();
+Q_SLOT    void updateGame();
 
 private:
     void drawBorder();
 
     bool m_isRunning;
+    //TODO: make unqiue ptr
     Renderer* m_renderer = nullptr;
     World* m_world = nullptr;
     QTimer* m_timer = nullptr;
