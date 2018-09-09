@@ -41,6 +41,8 @@ QGraphicsItem* World::collideWithBorder(QGraphicsItem *object)
     {
         return m_border->left;
     }
+    // TODO: object->collidingItems();
+    //
     return nullptr;
 }
 

@@ -10,7 +10,7 @@ public:
     ~Renderer();
 
 private:
-    QGraphicsView* m_view = nullptr;
+    QGraphicsView  m_view = nullptr;
 
     static const int WIDTH = 800;
     static const int HEIGHT = 600;
