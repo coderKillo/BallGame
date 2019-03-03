@@ -16,14 +16,14 @@ public:
 
     IGameObjectState* getState() const
     {
-        return currentState;
+        return currentState.get();
     }
 
-    void setState(IGameObjectState* state)
+    void setState(std::unique_ptr<IGameObjectState> &&state)
     {
-        if(state != nullptr)
+        if(state)
         {
-            currentState = state;
+            currentState = std::move(state);
         }
     }
 
@@ -51,7 +51,7 @@ public:
     }
 
 protected:
-    IGameObjectState* currentState = nullptr;
+    std::unique_ptr<IGameObjectState> currentState;
     qreal m_dx = 0;
     qreal m_dy = 0;
     bool m_isDirty = true;

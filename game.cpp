@@ -4,9 +4,9 @@
 
 Game::Game()
     :m_isRunning(true)
-    ,m_renderer(new Renderer)
-    ,m_world(new World)
-    ,m_timer(new QTimer)
+    ,m_timer(new QTimer(this))
+    ,m_renderer(new Renderer())
+    ,m_world(new World())
 {
     //start Timer
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateGame()));
@@ -15,14 +15,7 @@ Game::Game()
     drawBorder();
 }
 
-Game::~Game()
-{
-    delete m_renderer;
-    delete m_world;
-    delete m_timer;
-}
-
-bool Game::isRunning()
+bool Game::isRunning() const
 {
     return m_isRunning;
 }

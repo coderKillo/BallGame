@@ -7,6 +7,13 @@
 
 struct Border
 {
+    enum BorderEnum
+    {
+        top = 0,
+        bottom,
+        right,
+        left
+    };
     Border(QRectF rect, qreal width)
     {
         top = new QGraphicsLineItem(QLineF(rect.topLeft(), rect.topRight()));

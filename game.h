@@ -1,27 +1,28 @@
 #ifndef GAME_H
 #define GAME_H
-#include <QMainWindow>
-#include "renderer.h"
 #include "world.h"
-#include "QTimer"
+#include "renderer.h"
+#include <QMainWindow>
+#include <QTimer>
+#include <memory>
 
 class Game: public QObject
 {
     Q_OBJECT
 public:
     Game();
-    ~Game();
-    bool isRunning();
+    ~Game() {}
+    bool isRunning() const;
 
-public slots:
-    void updateGame();
+Q_SLOT    void updateGame();
 
 private:
     void drawBorder();
 
     bool m_isRunning;
-    Renderer* m_renderer = nullptr;
-    World* m_world = nullptr;
+
+    std::unique_ptr<Renderer> m_renderer;
+    std::unique_ptr<World> m_world;
     QTimer* m_timer = nullptr;
 };
 #endif // GAME_H
